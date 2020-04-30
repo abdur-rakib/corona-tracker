@@ -3,12 +3,17 @@ import { Card, CardContent, Typography, Grid } from '@material-ui/core'
 import CountUp from 'react-countup'
 import moment from 'moment'
 import cx from 'classnames'
+import loading from '../../images/loading.gif'
 
 import styles from './Cards.module.css'
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     if (!confirmed) {
-        return 'Loading!!!'
+        return (
+            <div>
+                <img src={loading} alt=""/>
+            </div>
+        )
     }
 
     return (
